@@ -1,0 +1,96 @@
+\usepackage[tabular]{AlegreyaSans}
+\usepackage[noend,noline]{algorithm2e}
+\usepackage[polish]{babel}
+\usepackage{booktabs}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\def \LongInput#1{%
+  \ifWydruk
+    \begin{frame}{\FrameTitle}
+      #1
+    \end{frame}
+  \else
+    \input #1
+  \fi
+}
+
+\def \IncludeDiagram#1#2{%
+  \ifWydruk
+    \includegraphics[#1]{./images/white/#2}
+  \else
+    \includegraphics[#1]{./images/black/#2}
+  \fi
+}
+
+\usetheme{metropolis}
+\ifWydruk
+  \definecolor{myorange}{HTML}{005500}
+\else
+  \usecolortheme{owl}
+  \definecolor{myorange}{HTML}{FFA500}
+\fi
+\definecolor{myred}{HTML}{FF0000}
+\definecolor{mygreen}{HTML}{AAFF00}
+\definecolor{mygray}{HTML}{BAB5C8}
+
+\setbeamersize{text margin left=5mm}
+
+% Jeśli to polecenie przestanie działać z~powodu zmiany Pythona 3 na
+% nowszą wersję, należy skopiować pliki
+% ~/.local/lib/python3.10/site-packages/pygments/styles/bw-with-orange-comments.py
+% ~/.local/lib/python3.10/site-packages/pygments/styles/__init__.py
+% na nowe miejsca.
+\usemintedstyle[go]{bw-with-orange-comments}
+
+\usetikzlibrary{automata,positioning,arrows}
+
+\tikzset{
+  ->,
+  >=stealth,
+  initial text={\it start},
+  every state/.style={inner sep=2pt,minimum size=3mm},
+  double=black,
+  double distance=2pt,
+  node distance=15mm,
+}
+
+\frenchspacing
+\def \g{\color{myorange}}
+\let \ttt = \tt
+\def \tt{\g\ttt}
+\let \iit = \it
+\def \it{\g\iit}
+
+\title{SQL i nie tylko}
+\author{dr~inż.~Marcin Ciura}
+\institute{%
+  Wydział Bezpieczeństwa i Informatyki\\Uniwersytet Komisji Edukacji Narodowej}
+\date{}
+
+\setmonofont[
+  Path=./fonts,
+  Extension=.ttf,
+  Contextuals=NoAlternate,
+  UprightFont=*-regular,
+  BoldFont=*-bold,
+  ItalicFont=*-oblique,
+  SlantedFont=*-oblique,
+  Scale=0.87,
+]{iosevka-slab}
+
+\def \MakeFrameTitles{
+  \frametitle<1>{\FrameTitle}%
+  \frametitle<2>{\FrameTitle\,--\,powtórzenie}%
+}
+
+\def \beginFrame#1{\begin{frame}<1>[fragile,label=#1]\MakeFrameTitles}
+\def \beginMinted{\begin{minted}[tabsize=3,obeytabs]{go}}
+
+\def \le {\leqslant}
+\def \ge {\geqslant}

@@ -1,0 +1,17 @@
+\documentclass{beamer}
+\usepackage{forest}
+\newif \ifWydruk
+\Wydrukfalse
+\input makra.tex
+
+\begin{document}
+  \maketitle
+
+  \begin{frame}{Plan na dziś}
+    \begin{itemize}
+      \item Algebra liniowa
+
+    \end{itemize}
+  \end{frame}
+
+\end{document}

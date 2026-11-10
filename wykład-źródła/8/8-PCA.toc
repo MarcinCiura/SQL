@@ -1,0 +1,8 @@
+\babel@toc {polish}{}\relax 
+\beamer@sectionintoc {1}{Algebra liniowa}{3}{0}{1}
+\beamer@sectionintoc {2}{Wektory}{5}{0}{2}
+\beamer@sectionintoc {3}{Odwzorowania liniowe}{12}{0}{3}
+\beamer@sectionintoc {4}{Macierze}{17}{0}{4}
+\beamer@sectionintoc {5}{Mnożenie macierzy}{21}{0}{5}
+\beamer@sectionintoc {6}{Rozkład na~wartości osobliwe (SVD)}{36}{0}{6}
+\beamer@sectionintoc {7}{Analiza głównych składowych (PCA)}{51}{0}{7}

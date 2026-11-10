@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+
+import numpy as np
+from sklearn.decomposition import PCA
+
+# Przykładowa macierz 5x2 (5 obserwacji, 2 cechy)
+X = np.array([
+    [4, 6],
+    [5, 5],
+    [5, 4],
+    [4, 4],
+    [6, 3],
+])
+
+X = np.array([
+[2,2,2,2,2,2,2,2,2,1,2,2,1,2,0,2,2,1,2,2,2,2,2,2],
+[1,2,2,0,2,1,2,1,2,2,2,2,1,1,0,2,2,1,1,2,2,2,1,1],
+[2,2,2,1,2,1,2,0,2,2,2,2,2,0,2,2,1,1,2,1,1,2,1,2],
+[2,1,0,1,1,1,2,1,2,1,1,1,1,0,2,1,1,1,1,1,2,2,1,2],
+[0,0,0,1,2,2,2,0,2,0,1,2,1,0,1,2,1,1,1,2,0,1,2,1],
+[2,1,1,2,1,2,2,1,2,2,1,1,1,1,1,1,0,1,1,1,0,1,0,2],
+[1,1,2,2,2,0,2,1,2,1,1,1,1,2,2,1,0,2,1,2,1,2,2,2],
+[2,1,0,2,2,1,2,1,1,0,1,1,2,2,2,2,2,2,2,2,1,2,2,2],
+[2,2,2,2,1,0,2,2,2,1,2,1,2,2,2,2,2,2,2,2,2,2,2,2],
+[2,2,2,2,2,2,2,2,2,1,2,1,1,2,2,2,2,1,2,2,2,2,2,2],
+[1,1,2,1,2,1,2,2,2,2,2,2,2,2,1,2,1,2,2,2,2,2,2,2],
+])
+
+# Tworzymy obiekt PCA (domyślnie liczy wszystkie składowe, czyli max 2)
+pca = PCA()
+
+# Centrowanie danych oraz wyznaczenie składowych głównych
+X_pca = pca.fit_transform(X)
+
+print("Dane po transformacji (współrzędne w nowej bazie):")
+print(X_pca)
+
+print("\nWektory własne / kierunki składowych (kolejne wiersze to wektory):")
+print(pca.components_)
+
+print("\nProcent wyjaśnionej wariancji przez każdą składową:")
+print(pca.explained_variance_ratio_)
